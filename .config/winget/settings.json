@@ -5,5 +5,38 @@
     },
     "visual": {
         "progressBar": "accent"
+    },
+    "installBehavior": {
+        "disableInstallNotes": false,
+        "portablePackageUserRoot": "%LOCALAPPDATA%/Microsoft/WinGet/Packages/",
+        "portablePackageMachineRoot": "%PROGRAMFILES%/WinGet/Packages/",
+        "preferences": {
+            "scope": "user",
+            "locale": [ "ja-JP", "en-US" ]
+        },
+        "ignoreWarnings": false
+    },
+    "uninstallBehavior": {
+        "purgePortablePackage": true
+    },
+    "telemetry": {
+        "disable": false
+    },
+    "network": {
+        "downloader": "default",
+        "doProgressTimeoutInSeconds": 60
+    },
+    "interactivity": {
+        "disable": false
+    },
+    "logging": {
+        "level": "info"
+    },
+    "experimentalFeatures": {
+        "experimentalCMD": true,
+        "experimentalARG": false,
+        "directMSI": true,
+        "dependencies": true,
+        "uninstallPreviousArgument": true
     }
 }
