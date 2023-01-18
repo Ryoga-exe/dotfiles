@@ -1,4 +1,5 @@
 {
+    "$help": "https://aka.ms/winget-settings",
     "$schema": "https://aka.ms/winget-settings.schema.json",
     "source": {
         "autoUpdateIntervalInMinutes": 5
