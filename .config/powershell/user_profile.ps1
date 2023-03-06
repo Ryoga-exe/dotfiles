@@ -1,9 +1,12 @@
-# Set PowerShell to UTF-8
+# Encoding
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 $env:LESSCHARSET = "utf-8"
 
 # Prompt
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+
+# Neovim
+$env:XDG_CONFIG_HOME = "~/.config"
 
 # Alias
 Set-Alias -Name vim -Value nvim
