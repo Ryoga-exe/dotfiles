@@ -1,9 +1,9 @@
 {
-	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2023-03-13T02:40:34.805+09:00",
-	"Sources" : [
-		{
-			"Packages" : [
+    "$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
+    "CreationDate" : "2023-03-13T02:40:34.805+09:00",
+    "Sources" : [
+        {
+            "Packages" : [
                 {
                     "PackageIdentifier" : "bmatzelle.Gow"
                 },
@@ -64,16 +64,16 @@
                 {
                     "PackageIdentifier": "Valve.Steam"
                 }
-			],
-			"SourceDetails" : {
-				"Argument" : "https://cdn.winget.microsoft.com/cache",
-				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
-				"Name" : "winget",
-				"Type" : "Microsoft.PreIndexed.Package"
-			}
-		},
-		{
-			"Packages" : [
+            ],
+            "SourceDetails" : {
+                "Argument" : "https://cdn.winget.microsoft.com/cache",
+                "Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
+                "Name" : "winget",
+                "Type" : "Microsoft.PreIndexed.Package"
+            }
+        },
+        {
+            "Packages" : [
                 {
                     "PackageIdentifier": "XPDNKVCX4QD2DC"
                 },
@@ -107,14 +107,14 @@
                 {
                     "PackageIdentifier": "9PGCV4V3BK4W"
                 }
-			],
-			"SourceDetails" : {
-				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-				"Identifier" : "StoreEdgeFD",
-				"Name" : "msstore",
-				"Type" : "Microsoft.Rest"
-			}
-		}
-	],
-	"WinGetVersion" : "1.4.10173"
+            ],
+            "SourceDetails" : {
+                "Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+                "Identifier" : "StoreEdgeFD",
+                "Name" : "msstore",
+                "Type" : "Microsoft.Rest"
+            }
+        }
+    ],
+    "WinGetVersion" : "1.4.10173"
 }
