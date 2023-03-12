@@ -1,0 +1,64 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$shell\
+($username)\
+$directory\
+($git_branch$git_status[\ue0b0](fg:#17d7a0))\
+$fill$time\
+$line_break\
+$character\
+"""
+
+[shell]
+format = """
+[\u256d\u2500\ue0b6](fg:#0077c2)\
+[ $indicator ](fg:#ffffff bg:#0077c2)\
+[\ue0b0](fg:#0077c2 bg:#444444)\
+"""
+disabled = false
+
+[username]
+format = """
+\b\
+[\ue0b0](fg:#0077c2 bg:#ef5350)\
+[ \uf0e7 $user ](fg:#fffb38 bg:#ef5350)\
+[\ue0b0](fg:#ef5350 bg:#444444)\
+"""
+disabled = false
+show_always = false
+
+[directory]
+format = "[ $path ](fg:#e4e4e4 bg:#444444)[\ue0b0](fg:#444444)"
+truncation_length = 0
+truncate_to_repo = false
+truncation_symbol = "…/"
+home_symbol = "~"
+use_os_path_sep = false
+
+[git_branch]
+format = """
+\b\
+[\ue0b0](fg:#444444 bg:#17d7a0)\
+[ $symbol$branch(:$remote_branch) ](bg:#17d7a0 fg:#011627)\
+"""
+symbol = "\ue0a0 "
+
+[git_status]
+untracked = "?$count"
+format = "([$all_status$ahead_behind$count ](bg:#17d7a0 fg:#011627))"
+
+[fill]
+symbol = " "
+
+[time]
+disabled = false
+format = "[\ue0b6[ \uf64f $time ](fg:#ffffff bg:#40c4ff)\ue0b4](fg:#40c4ff)"
+
+[character]
+format = """
+[\u2570\u2500](fg:#21c7c7)\
+$symbol \
+"""
+success_symbol = "[\u276f](#e0f8ff)"
+error_symbol = "[\u276f](#ef5350)"
