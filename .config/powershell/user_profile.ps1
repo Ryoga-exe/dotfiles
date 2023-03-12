@@ -29,6 +29,9 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 # scoop
 Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
 
+# Git
+$env:GIT_SSH = "C:\Windows\System32\OpenSSH\ssh.exe"
+
 # Alias
 Set-Alias vim nvim
 Set-Alias grep findstr
