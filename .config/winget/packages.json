@@ -1,0 +1,120 @@
+{
+	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
+	"CreationDate" : "2023-03-13T02:40:34.805+09:00",
+	"Sources" : [
+		{
+			"Packages" : [
+                {
+                    "PackageIdentifier" : "bmatzelle.Gow"
+                },
+                {
+                    "PackageIdentifier" : "Docker.DockerDesktop"
+                },
+                {
+                    "PackageIdentifier" : "gerardog.gsudo"
+                },
+                {
+                    "PackageIdentifier" : "Git.Git"
+                },
+                {
+                    "PackageIdentifier" : "GitHub.GitHubDesktop"
+                },
+                {
+                    "PackageIdentifier" : "GnuPG.Gpg4win"
+                },
+                {
+                    "PackageIdentifier" : "Google.Chrome"
+                },
+                {
+                    "PackageIdentifier" : "Google.Drive"
+                },
+                {
+                    "PackageIdentifier" : "Google.JapaneseIME"
+                },
+                {
+                    "PackageIdentifier" : "Keybase.Keybase"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.WindowsTerminal"
+                },
+                {
+                    "PackageIdentifier": "Mozilla.Firefox.DeveloperEdition"
+                },
+                {
+                    "PackageIdentifier": "Musescore.Musescore"
+                },
+                {
+                    "PackageIdentifier": "Neovim.Neovim"
+                },
+                {
+                    "PackageIdentifier": "Nvidia.GeForceExperience"
+                },
+                {
+                    "PackageIdentifier": "Starship.Starship"
+                },
+                {
+                    "PackageIdentifier": "stedolan.jq"
+                },
+                {
+                    "PackageIdentifier": "Streamlabs.StreamlabsOBS"
+                },
+                {
+                    "PackageIdentifier": "SomePythonThings.WingetUIStore"
+                },
+                {
+                    "PackageIdentifier": "Valve.Steam"
+                }
+			],
+			"SourceDetails" : {
+				"Argument" : "https://cdn.winget.microsoft.com/cache",
+				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name" : "winget",
+				"Type" : "Microsoft.PreIndexed.Package"
+			}
+		},
+		{
+			"Packages" : [
+                {
+                    "PackageIdentifier": "XPDNKVCX4QD2DC"
+                },
+                {
+                    "PackageIdentifier": "XP8K0J757HHRDW"
+                },
+                {
+                    "PackageIdentifier": "XPDC2RH70K22MN"
+                },
+                {
+                    "PackageIdentifier": "9MZ1SNWT0N5D"
+                },
+                {
+                    "PackageIdentifier" : "XP89DCGQ3K6VLD"
+                },
+                {
+                    "PackageIdentifier": "XPDCFJDKLZJLP8"
+                },
+                {
+                    "PackageIdentifier": "XP9KHM4BK9FZ7Q"
+                },
+                {
+                    "PackageIdentifier": "9N3SQK8PDS8G"
+                },
+                {
+                    "PackageIdentifier": "9WZDNCRDK3WP"
+                },
+                {
+                    "PackageIdentifier": "XP99J3KP4XZ4VV"
+                },
+                {
+                    "PackageIdentifier": "9PGCV4V3BK4W"
+                }
+			],
+			"SourceDetails" : {
+				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+				"Identifier" : "StoreEdgeFD",
+				"Name" : "msstore",
+				"Type" : "Microsoft.Rest"
+			}
+		}
+	],
+	"WinGetVersion" : "1.4.10173"
+}
