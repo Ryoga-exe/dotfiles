@@ -1,3 +1,5 @@
+$env:XDG_CONFIG_HOME = "$HOME\.config"
+
 # Encoding
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 $env:LESSCHARSET = "utf-8"
@@ -11,9 +13,6 @@ Import-Module -Name Terminal-Icons
 # Starship
 $env:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
 Invoke-Expression (&starship init powershell)
-
-# Neovim
-$env:XDG_CONFIG_HOME = "~/.config"
 
 # winget
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
@@ -43,3 +42,4 @@ function which ($command) {
     Get-Command -Name $command -ErrorAction SilentlyContinue |
         Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
+
