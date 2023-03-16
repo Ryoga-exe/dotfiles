@@ -7,6 +7,9 @@ $env:LESSCHARSET = "utf-8"
 # Completion
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
+# History
+Set-PSReadLineOption -HistoryNoDuplicates
+
 # Terminal Icons
 Import-Module -Name Terminal-Icons
 
