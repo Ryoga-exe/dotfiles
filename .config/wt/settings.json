@@ -342,7 +342,7 @@
             },
             "cursorShape": "bar",
             "cursorHeight": 25,
-            "opacity": 75,
+            "opacity": 70,
             "useAcrylic": true,
             "padding": "8, 8, 8, 8",
             "scrollbarState": "visible"
@@ -377,7 +377,8 @@
                 "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc",
+                "background": "#300A24"
             },
             {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
