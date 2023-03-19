@@ -38,6 +38,9 @@
                     "PackageIdentifier" : "Keybase.Keybase"
                 },
                 {
+                    "PackageIdentifier": "Microsoft.OpenSSH.Beta"
+                },
+                {
                     "PackageIdentifier": "Microsoft.WindowsTerminal"
                 },
                 {
