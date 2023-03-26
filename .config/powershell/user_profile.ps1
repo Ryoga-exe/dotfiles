@@ -14,7 +14,7 @@ Set-PSReadLineOption -HistoryNoDuplicates
 Import-Module -Name Terminal-Icons
 
 # Starship
-$env:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
+$env:STARSHIP_CONFIG = "$env:XDG_CONFIG_HOME\starship.toml"
 Invoke-Expression (&starship init powershell)
 
 # winget
