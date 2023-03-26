@@ -9,4 +9,3 @@ if ($PSVersionTable.PSVersion.Major -gt 4) {
 else {
     Write-Warning "PowerShell version does not meet the requirements."
 }
-
