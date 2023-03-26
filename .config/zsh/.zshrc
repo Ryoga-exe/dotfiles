@@ -1,0 +1,4 @@
+# .zshrc
+
+# Alias
+source ./.zalias
