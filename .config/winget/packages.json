@@ -47,13 +47,7 @@
                     "PackageIdentifier": "Mozilla.Firefox.DeveloperEdition"
                 },
                 {
-                    "PackageIdentifier": "Musescore.Musescore"
-                },
-                {
                     "PackageIdentifier": "Neovim.Neovim"
-                },
-                {
-                    "PackageIdentifier": "Nvidia.GeForceExperience"
                 },
                 {
                     "PackageIdentifier": "Starship.Starship"
