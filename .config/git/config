@@ -2,7 +2,7 @@
     name = Ryoga-exe
     email = 49950206+Ryoga-exe@users.noreply.github.com
 [color]
-	ui = true
+    ui = true
 [alias]
     sync = !git switch $(git remote show origin | grep 'HEAD branch' | awk '{print $NF}') && git pull origin $(git remote show origin | grep 'HEAD branch' | awk '{print $NF}') && git fetch --prune && git branch -d $(git branch --merged | grep -v '*')
     tags = !git tag --sort=-creatordate | head -n 10
