@@ -1,5 +1,3 @@
-$env:XDG_CONFIG_HOME = "$HOME\.config"
-
 # Encoding
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 $env:LESSCHARSET = "utf-8"
