@@ -1,9 +1,5 @@
 # winget
 
-## `settings.json`
-
-winget の設定
-
 ## `packages.json`
 
 winget でインストールするソフトウェア
