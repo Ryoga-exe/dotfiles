@@ -29,7 +29,7 @@ if ($PSVersionTable.PSVersion.Major -gt 4) {
         $currentPath = (Get-Location).Path
 
         # profile.ps1 -> $PROFILE
-        New-DirectoryIfNotExist -target (Get-Item $PROFILE.CurrentUserCurrentHost).Directory.FullName
+        New-DirectoryIfNotExist -target (Join-Path $HOME Documents\PowerShell)
         New-SymbolicLink -from .\profile.ps1 -to $PROFILE.CurrentUserCurrentHost
         
         # .config -> $HOME\.config
