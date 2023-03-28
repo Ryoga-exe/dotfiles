@@ -23,36 +23,43 @@ function New-DirectoryIfNotExist {
 
 if ($PSVersionTable.PSVersion.Major -gt 4) {
     if (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-        
-        Write-Host "Create Symbolic Links" -ForegroundColor Yellow
+
         $currentPath = (Get-Location).Path
-        
-        # profile.ps1 -> $PROFILE
-        New-DirectoryIfNotExist -target (Join-Path $HOME Documents\PowerShell)
-        New-SymbolicLink -from .\profile.ps1 -to $PROFILE.CurrentUserCurrentHost
-        
-        # .config -> $HOME\.config
-        $itemList = Get-ChildItem .\.config -Recurse
-        foreach ($item in $itemList) {
-            $target = (Join-Path $HOME ($item.FullName).Substring($currentPath.Length))
-            if ($item.PSIsContainer) {
-                New-DirectoryIfNotExist -target $target
+
+        if ($currentPath -eq (Convert-Path $PSScriptRoot\..)) {
+
+            Write-Host "Create Symbolic Links" -ForegroundColor Yellow
+            
+            # profile.ps1 -> $PROFILE
+            New-DirectoryIfNotExist -target (Join-Path $HOME Documents\PowerShell)
+            New-SymbolicLink -from .\profile.ps1 -to $PROFILE.CurrentUserCurrentHost
+            
+            # .config -> $HOME\.config
+            $itemList = Get-ChildItem .\.config -Recurse
+            foreach ($item in $itemList) {
+                $target = (Join-Path $HOME ($item.FullName).Substring($currentPath.Length))
+                if ($item.PSIsContainer) {
+                    New-DirectoryIfNotExist -target $target
+                }
+                else {
+                    New-SymbolicLink -from $item.FullName -to $target
+                }
             }
-            else {
-                New-SymbolicLink -from $item.FullName -to $target
+
+            # AppData -> $HOME\AppData
+            $itemList = Get-ChildItem .\AppData -Recurse
+            foreach ($item in $itemList) {
+                $target = (Join-Path $HOME ($item.FullName).Substring($currentPath.Length))
+                if ($item.PSIsContainer) {
+                    New-DirectoryIfNotExist -target $target
+                }
+                else {
+                    New-SymbolicLink -from $item.FullName -to $target
+                }
             }
         }
-
-        # AppData -> $HOME\AppData
-        $itemList = Get-ChildItem .\AppData -Recurse
-        foreach ($item in $itemList) {
-            $target = (Join-Path $HOME ($item.FullName).Substring($currentPath.Length))
-            if ($item.PSIsContainer) {
-                New-DirectoryIfNotExist -target $target
-            }
-            else {
-                New-SymbolicLink -from $item.FullName -to $target
-            }
+        else {
+            Write-Warning "This script must be run from root directory on Git repository."
         }
     }
     else {
