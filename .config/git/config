@@ -1,0 +1,24 @@
+[user]
+    name = Ryoga-exe
+    email = 49950206+Ryoga-exe@users.noreply.github.com
+[color]
+	ui = true
+[alias]
+    sync = !git switch $(git remote show origin | grep 'HEAD branch' | awk '{print $NF}') && git pull origin $(git remote show origin | grep 'HEAD branch' | awk '{print $NF}') && git fetch --prune && git branch -d $(git branch --merged | grep -v '*')
+    tags = !git tag --sort=-creatordate | head -n 10
+[merge]
+    ff = false
+    conflictstyle = diff3
+[push]
+    default = current
+[pull]
+    ff = only
+[github]
+    user = Ryoga-exe
+[init]
+    defaultBranch = main
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
