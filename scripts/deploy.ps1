@@ -10,23 +10,34 @@ function New-SymbolicLink {
     Write-Host "$from -> $to" -ForegroundColor Cyan
 }
 
+function New-DirectoryIfNotExist {
+    param (
+        [string]$target
+    )
+    if (!(Test-Path -Path $target)) {
+        [void](New-Item -ItemType "directory" -Path $target)
+        Write-Host "Created Directory: " -NoNewline
+        Write-Host "$target" -ForegroundColor Cyan
+    }
+}
+
 if ($PSVersionTable.PSVersion.Major -gt 4) {
     if (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
         
         Write-Host "Create Symbolic Links" -ForegroundColor Yellow
         
         $currentPath = (Get-Location).Path
+
+        # profile.ps1 -> $PROFILE
+        New-DirectoryIfNotExist -target (Get-Item $PROFILE.CurrentUserCurrentHost).Directory.FullName
+        New-SymbolicLink -from .\profile.ps1 -to $PROFILE.CurrentUserCurrentHost
         
         # .config -> $HOME\.config
         $itemList = Get-ChildItem .\.config -Recurse
         foreach ($item in $itemList) {
             $target = (Join-Path $HOME ($item.FullName).Substring($currentPath.Length))
             if ($item.PSIsContainer) {
-                if (!(Test-Path -Path $target)) {
-                    [void](New-Item -ItemType "directory" -Path $target)
-                    Write-Host "Created Directory: " -NoNewline
-                    Write-Host "$target" -ForegroundColor Cyan
-                }
+                New-DirectoryIfNotExist -target $target
             }
             else {
                 New-SymbolicLink -from $item.FullName -to $target
