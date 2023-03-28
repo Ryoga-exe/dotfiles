@@ -2,7 +2,7 @@
 
 # History
 if [[ ! -d "${XDG_STATE_HOME:-$HOME/.local/state}"/zsh ]]; then
-  mkdir -p -m 700 "${XDG_STATE_HOME:-$HOME/.local/state}"/zsh
+    mkdir -p -m 700 "${XDG_STATE_HOME:-$HOME/.local/state}"/zsh
 fi
 export HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}"/zsh/history
 export HISTSIZE=100000
@@ -26,3 +26,8 @@ source $ZDOTDIR/.zalias
 # Utilities
 setopt auto_cd
 setopt no_flow_control
+
+# Starship
+if [[ $(command -v starship) ]]; then
+    eval "$(starship init zsh)"
+fi
