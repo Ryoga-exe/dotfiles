@@ -1,5 +1,6 @@
 # .zprofile
 
+# WSL
 if [[ $(command -v wslpath) ]]; then
     export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
     ss -a | grep -q $SSH_AUTH_SOCK
