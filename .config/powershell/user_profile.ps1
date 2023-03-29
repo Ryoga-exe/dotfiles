@@ -9,7 +9,10 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineOption -HistoryNoDuplicates
 
 # Terminal Icons
-Import-Module -Name Terminal-Icons
+Import-Module -Name Terminal-Icons -ErrorAction SilentlyContinue
+if (!$?) {
+    Write-Warning 'Terminal-Icons is not installed, try "Install-Module -Name Terminal-Icons -Repository PSGallery"'
+}
 
 # Starship
 $env:STARSHIP_CONFIG = "$env:XDG_CONFIG_HOME\starship.toml"
@@ -27,7 +30,9 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 }
 
 # scoop
-Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+if (Test-Path -Path "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion") {
+    Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+}
 
 # Git
 $env:GIT_SSH = "C:\Windows\System32\OpenSSH\ssh.exe"
