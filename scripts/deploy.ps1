@@ -3,9 +3,9 @@ function New-SymbolicLink {
         [string]$from,
         [string]$to
     )
-    Write-Host "Create Symbolic Link: " -NoNewline
-    Write-Host "$from -> $to" -ForegroundColor Cyan
     [void](New-Item -ItemType SymbolicLink -Path $to -Value $from -Force)
+    Write-Host "Created Symbolic Link: " -NoNewline
+    Write-Host $from.Replace($HOME, '$HOME') " -> " $to.Replace($HOME, '$HOME') -ForegroundColor Cyan
 }
 
 function New-DirectoryIfNotExist {
@@ -15,7 +15,7 @@ function New-DirectoryIfNotExist {
     if (!(Test-Path -Path $target)) {
         [void](New-Item -ItemType "directory" -Path $target)
         Write-Host "Created Directory: " -NoNewline
-        Write-Host "$target" -ForegroundColor Cyan
+        Write-Host $target.Replace($HOME, '$HOME') -ForegroundColor Cyan
     }
 }
 
@@ -30,7 +30,7 @@ if ($PSVersionTable.PSVersion.Major -gt 4) {
             
             # profile.ps1 -> $PROFILE
             New-DirectoryIfNotExist -target (Join-Path $HOME Documents\PowerShell)
-            New-SymbolicLink -from .\profile.ps1 -to $PROFILE.CurrentUserCurrentHost
+            New-SymbolicLink -from (Get-Item .\profile.ps1).FullName -to $PROFILE.CurrentUserCurrentHost
             
             # .config -> $HOME\.config
             $itemList = Get-ChildItem .\.config -Recurse
