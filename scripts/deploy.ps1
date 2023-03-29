@@ -3,11 +3,9 @@ function New-SymbolicLink {
         [string]$from,
         [string]$to
     )
-    if (Test-Path -Path $to) {
-        # Remove-Item $to
-    }
     Write-Host "Create Symbolic Link: " -NoNewline
     Write-Host "$from -> $to" -ForegroundColor Cyan
+    [void](New-Item -ItemType SymbolicLink -Path $to -Value $from -Force)
 }
 
 function New-DirectoryIfNotExist {
