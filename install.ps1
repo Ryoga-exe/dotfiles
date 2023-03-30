@@ -1,3 +1,7 @@
+param (
+    [string]$dotfilesDir = "$env:USERPROFILE\workspace\repos\dotfiles"
+)
+
 Write-Host "Install dotfiles..."
 
 Write-Host "Set location to ~\"
@@ -26,10 +30,8 @@ if (!(Get-Command -Name scoop -ErrorAction SilentlyContinue)) {
     Invoke-RestMethod get.scoop.sh | Invoke-Expression
 }
 
-$dotfilesDirectory = "$env:USERPROFILE\workspace\repos\dotfiles"
-
 Write-Host "Clone dotfiles repository..."
-git clone "https://github.com/Ryoga-exe/dotfiles.git" "$dotfilesDirectory"
+git clone "https://github.com/Ryoga-exe/dotfiles.git" "$dotfilesDir"
 
 Write-Host "Set Location to ~\workspace\repos\dotfiles"
-Set-Location "$dotfilesDirectory"
+Set-Location "$dotfilesDir"
