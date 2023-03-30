@@ -9,8 +9,6 @@
     },
     "installBehavior": {
         "disableInstallNotes": false,
-        "portablePackageUserRoot": "%LOCALAPPDATA%/Microsoft/WinGet/Packages/",
-        "portablePackageMachineRoot": "%PROGRAMFILES%/WinGet/Packages/",
         "preferences": {
             "scope": "user",
             "locale": [ "ja-JP", "en-US" ]
