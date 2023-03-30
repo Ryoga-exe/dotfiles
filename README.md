@@ -4,12 +4,12 @@
 ## Installation
 
 ```sh
-curl -fsSL "https://raw.githubusercontent.com/Ryoga-exe/dotfiles/main/install.ps1" | sh
+curl -fsSL dotfiles.ryoga.dev | sh
 ```
 
 ### Windows
 
 ```pwsh
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm "https://raw.githubusercontent.com/Ryoga-exe/dotfiles/main/install.ps1" | iex
+irm windows.dotfiles.ryoga.dev | iex
 ```
