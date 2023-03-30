@@ -3,9 +3,13 @@
 
 ## Installation
 
+```sh
+curl -fsSL "https://raw.githubusercontent.com/Ryoga-exe/dotfiles/main/install.ps1" | sh
+```
+
 ### Windows
 
 ```pwsh
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm "https://raw.githubusercontent.com/Ryoga-exe/dotfiles/main/install.ps1" | iex
 ```
