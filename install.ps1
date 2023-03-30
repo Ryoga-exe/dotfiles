@@ -21,9 +21,10 @@ if (!(Get-Command -Name git -ErrorAction SilentlyContinue)) {
     winget install -e --id Git.Git -h --accept-package-agreements --accept-source-agreements
 }
 
+$dotfilesDirectory = "$env:USERPROFILE\workspace\repos\dotfiles"
+
 Write-Host "Clone dotfiles repository..."
-git clone "https://github.com/Ryoga-exe/dotfiles.git" "$env:USERPROFILE\workspace\repos\dotfiles"
+git clone "https://github.com/Ryoga-exe/dotfiles.git" "$dotfilesDirectory"
 
 Write-Host "Set Location to ~\workspace\repos\dotfiles"
-Set-Location "$env:USERPROFILE\workspace\repos\dotfiles"
-
+Set-Location "$dotfilesDirectory"
