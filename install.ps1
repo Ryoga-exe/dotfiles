@@ -21,6 +21,11 @@ if (!(Get-Command -Name git -ErrorAction SilentlyContinue)) {
     winget install -e --id Git.Git -h --accept-package-agreements --accept-source-agreements
 }
 
+if (!(Get-Command -Name scoop -ErrorAction SilentlyContinue)) {
+    Write-Host "Install scoop..."
+    Invoke-RestMethod get.scoop.sh | Invoke-Expression
+}
+
 $dotfilesDirectory = "$env:USERPROFILE\workspace\repos\dotfiles"
 
 Write-Host "Clone dotfiles repository..."
