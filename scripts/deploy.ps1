@@ -5,7 +5,7 @@ function New-SymbolicLink {
     )
     New-Item -ItemType SymbolicLink -Path $to -Value $from -Force | Out-Null
     Write-Host "Created Symbolic Link: " -NoNewline
-    Write-Host $from.Replace($HOME, '$HOME') " -> " $to.Replace($HOME, '$HOME') -ForegroundColor Cyan
+    Write-Host $from.Replace($HOME, '~') " -> " $to.Replace($HOME, '~') -ForegroundColor Cyan
 }
 
 function New-DirectoryIfNotExist {
@@ -15,7 +15,7 @@ function New-DirectoryIfNotExist {
     if (!(Test-Path -Path $target)) {
         New-Item -ItemType "directory" -Path $target | Out-Null
         Write-Host "Created Directory: " -NoNewline
-        Write-Host $target.Replace($HOME, '$HOME') -ForegroundColor Cyan
+        Write-Host $target.Replace($HOME, '~') -ForegroundColor Cyan
     }
 }
 
