@@ -31,6 +31,8 @@ if (!(Get-Command -Name scoop -ErrorAction SilentlyContinue)) {
     Invoke-RestMethod get.scoop.sh | Invoke-Expression
 }
 
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
 Write-Host "Clone dotfiles repository..."
 git clone "https://github.com/Ryoga-exe/dotfiles.git" "$dotfilesDir"
 
