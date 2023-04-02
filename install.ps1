@@ -38,3 +38,6 @@ git clone "https://github.com/Ryoga-exe/dotfiles.git" "$dotfilesDir"
 
 Write-Host "Set Location to ~\workspace\repos\dotfiles"
 Set-Location "$dotfilesDir"
+
+Write-Host "Deploy..."
+Start-Process powershell.exe ("-NoProfile -Command cd " + $dotfilesDir + "; scripts\deploy.ps1; Start-Sleep -Milliseconds 1000") -Verb runas
