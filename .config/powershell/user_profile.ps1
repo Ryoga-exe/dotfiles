@@ -4,6 +4,12 @@ $env:LESSCHARSET = "utf-8"
 
 # Completion
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineOption -PredictionSource History
+
+# PSReadLine
+Set-PSReadLineOption -EditMode Emacs
+Set-PSReadLineOption -BellStyle None
+Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 
 # History
 Set-PSReadLineOption -HistoryNoDuplicates
@@ -12,6 +18,22 @@ Set-PSReadLineOption -HistoryNoDuplicates
 Import-Module -Name Terminal-Icons -ErrorAction SilentlyContinue
 if (!$?) {
     Write-Warning 'Terminal-Icons is not installed, try "Install-Module -Name Terminal-Icons -Repository PSGallery"'
+}
+
+# Fzf
+Import-Module -Name PSFzf -ErrorAction SilentlyContinue
+if ($?) {
+    Enable-PsFzfAliases
+    Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
+}
+else {
+    Write-Warning 'PSFzf is not installed, try "scoop install fzf; Install-Module -Name PSFzf -Scope CurrentUser"'
+}
+
+# ZLocation
+Import-Module -Name ZLocation -ErrorAction SilentlyContinue
+if (!$?) {
+    Write-Warning 'ZLocation is not installed, try "Install-Module -Name ZLocation -Repository PSGallery -Scope CurrentUser"'
 }
 
 # Starship
