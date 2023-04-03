@@ -1,41 +1,41 @@
 {
-    "$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-    "CreationDate" : "2023-04-03T23:55:00.000+09:00",
-    "Sources" : [
+    "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+    "CreationDate": "2023-04-03T23:55:00.000+09:00",
+    "Sources": [
         {
-            "Packages" : [
+            "Packages": [
                 {
-                    "PackageIdentifier" : "bmatzelle.Gow"
+                    "PackageIdentifier": "bmatzelle.Gow"
                 },
                 {
-                    "PackageIdentifier" : "Docker.DockerDesktop"
+                    "PackageIdentifier": "Docker.DockerDesktop"
                 },
                 {
-                    "PackageIdentifier" : "gerardog.gsudo"
+                    "PackageIdentifier": "gerardog.gsudo"
                 },
                 {
-                    "PackageIdentifier" : "Git.Git"
+                    "PackageIdentifier": "Git.Git"
                 },
                 {
-                    "PackageIdentifier" : "GitHub.GitHubDesktop"
+                    "PackageIdentifier": "GitHub.GitHubDesktop"
                 },
                 {
-                    "PackageIdentifier" : "GnuPG.Gpg4win"
+                    "PackageIdentifier": "GnuPG.Gpg4win"
                 },
                 {
-                    "PackageIdentifier" : "Google.Chrome"
+                    "PackageIdentifier": "Google.Chrome"
                 },
                 {
-                    "PackageIdentifier" : "Google.Drive"
+                    "PackageIdentifier": "Google.Drive"
                 },
                 {
-                    "PackageIdentifier" : "Google.JapaneseIME"
+                    "PackageIdentifier": "Google.JapaneseIME"
                 },
                 {
-                    "PackageIdentifier" : "jstarks.npiperelay"
+                    "PackageIdentifier": "jstarks.npiperelay"
                 },
                 {
-                    "PackageIdentifier" : "Keybase.Keybase"
+                    "PackageIdentifier": "Keybase.Keybase"
                 },
                 {
                     "PackageIdentifier": "Microsoft.OpenSSH.Beta"
@@ -68,15 +68,15 @@
                     "PackageIdentifier": "Valve.Steam"
                 }
             ],
-            "SourceDetails" : {
-                "Argument" : "https://cdn.winget.microsoft.com/cache",
-                "Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
-                "Name" : "winget",
-                "Type" : "Microsoft.PreIndexed.Package"
+            "SourceDetails": {
+                "Argument": "https://cdn.winget.microsoft.com/cache",
+                "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+                "Name": "winget",
+                "Type": "Microsoft.PreIndexed.Package"
             }
         },
         {
-            "Packages" : [
+            "Packages": [
                 {
                     "PackageIdentifier": "XPDNKVCX4QD2DC"
                 },
@@ -90,7 +90,7 @@
                     "PackageIdentifier": "9MZ1SNWT0N5D"
                 },
                 {
-                    "PackageIdentifier" : "XP89DCGQ3K6VLD"
+                    "PackageIdentifier": "XP89DCGQ3K6VLD"
                 },
                 {
                     "PackageIdentifier": "XPDCFJDKLZJLP8"
@@ -111,13 +111,13 @@
                     "PackageIdentifier": "9PGCV4V3BK4W"
                 }
             ],
-            "SourceDetails" : {
-                "Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-                "Identifier" : "StoreEdgeFD",
-                "Name" : "msstore",
-                "Type" : "Microsoft.Rest"
+            "SourceDetails": {
+                "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+                "Identifier": "StoreEdgeFD",
+                "Name": "msstore",
+                "Type": "Microsoft.Rest"
             }
         }
     ],
-    "WinGetVersion" : "1.4.10173"
+    "WinGetVersion": "1.4.10173"
 }
