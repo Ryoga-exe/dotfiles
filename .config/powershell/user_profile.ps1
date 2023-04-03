@@ -36,6 +36,9 @@ if (!$?) {
     Write-Warning 'ZLocation is not installed, try "Install-Module -Name ZLocation -Repository PSGallery -Scope CurrentUser"'
 }
 
+# fnm
+fnm env --use-on-cd | Out-String | Invoke-Expression
+
 # Starship
 $env:STARSHIP_CONFIG = "$env:XDG_CONFIG_HOME\starship.toml"
 Invoke-Expression (&starship init powershell) -ErrorAction SilentlyContinue
