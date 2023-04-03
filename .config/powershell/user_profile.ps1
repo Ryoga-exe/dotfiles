@@ -2,14 +2,14 @@
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 $env:LESSCHARSET = "utf-8"
 
-# Completion
-Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
-Set-PSReadLineOption -PredictionSource History
-
 # PSReadLine
 Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
+
+# Completion
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineOption -PredictionSource History
 
 # History
 Set-PSReadLineOption -HistoryNoDuplicates
@@ -38,7 +38,10 @@ if (!$?) {
 
 # Starship
 $env:STARSHIP_CONFIG = "$env:XDG_CONFIG_HOME\starship.toml"
-Invoke-Expression (&starship init powershell)
+Invoke-Expression (&starship init powershell) -ErrorAction SilentlyContinue
+if (!$?) {
+    Write-Warning 'Starship is not installed, try "winget install -e --id Starship.Starship"'
+}
 
 # winget
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
