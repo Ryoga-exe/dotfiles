@@ -1,6 +1,6 @@
 {
     "$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-    "CreationDate" : "2023-03-13T02:40:34.805+09:00",
+    "CreationDate" : "2023-04-03T23:55:00.000+09:00",
     "Sources" : [
         {
             "Packages" : [
@@ -32,7 +32,7 @@
                     "PackageIdentifier" : "Google.JapaneseIME"
                 },
                 {
-                    "PackageIdentifier": "jstarks.npiperelay"
+                    "PackageIdentifier" : "jstarks.npiperelay"
                 },
                 {
                     "PackageIdentifier" : "Keybase.Keybase"
@@ -48,6 +48,9 @@
                 },
                 {
                     "PackageIdentifier": "Neovim.Neovim"
+                },
+                {
+                    "PackageIdentifier": "Schniz.fnm"
                 },
                 {
                     "PackageIdentifier": "Starship.Starship"
