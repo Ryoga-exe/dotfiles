@@ -9,3 +9,4 @@ fi
 alias vim=nvim
 alias cdgitroot='cd "$(git rev-parse --show-toplevel)"'
 alias cd.=cdgitroot
+alias cls=clear
