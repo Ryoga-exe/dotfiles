@@ -63,7 +63,6 @@ $symbol \
 success_symbol = "[\u276f](#e0f8ff)"
 error_symbol = "[\u276f](#ef5350)"
 
-# This is the default symbols table.
 [os.symbols]
 Alpine = "\uf300 "
 Amazon = "\uf270 "
