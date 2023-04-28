@@ -30,12 +30,6 @@ else {
     Write-Warning 'PSFzf is not installed, try "scoop install fzf; Install-Module -Name PSFzf -Scope CurrentUser"'
 }
 
-# ZLocation
-Import-Module -Name ZLocation -ErrorAction SilentlyContinue
-if (!$?) {
-    Write-Warning 'ZLocation is not installed, try "Install-Module -Name ZLocation -Repository PSGallery -Scope CurrentUser"'
-}
-
 # fnm
 fnm env --use-on-cd | Out-String | Invoke-Expression
 
@@ -45,6 +39,7 @@ Invoke-Expression (&starship init powershell) -ErrorAction SilentlyContinue
 if (!$?) {
     Write-Warning 'Starship is not installed, try "winget install -e --id Starship.Starship"'
 }
+# Enable-TransientPrompt
 
 # winget
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
@@ -72,6 +67,12 @@ Set-Alias ll Get-ChildItem
 Set-Alias tig 'C:\Program Files\Git\user\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\user\bin\less.exe'
 Set-Alias cd. cdgitroot
+
+# ZLocation
+Import-Module -Name ZLocation -ErrorAction SilentlyContinue
+if (!$?) {
+    Write-Warning 'ZLocation is not installed, try "Install-Module -Name ZLocation -Repository PSGallery -Scope CurrentUser"'
+}
 
 # Utilities
 function which ($command) {
