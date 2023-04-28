@@ -61,12 +61,7 @@ if (Test-Path -Path "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Paren
 $env:GIT_SSH = "C:\Windows\System32\OpenSSH\ssh.exe"
 
 # Alias
-Set-Alias vim nvim
-Set-Alias grep findstr
-Set-Alias ll Get-ChildItem
-Set-Alias tig 'C:\Program Files\Git\user\bin\tig.exe'
-Set-Alias less 'C:\Program Files\Git\user\bin\less.exe'
-Set-Alias cd. cdgitroot
+. "$PSScriptRoot\alias.ps1"
 
 # ZLocation
 Import-Module -Name ZLocation -ErrorAction SilentlyContinue
