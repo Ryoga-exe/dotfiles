@@ -3,7 +3,7 @@
 set -e
 
 WORKSPACE_DIR="${WORKSPACE_DIR:-$HOME/workspace}"
-DOTFILES_DIR="${DOTFILES_DIR:-$workspaceDir/repos/dotfiles}"
+DOTFILES_DIR="${DOTFILES_DIR:-$WORKSPACE_DIR/repos/dotfiles}"
 
 usage() {
     cat << EOF
@@ -35,7 +35,7 @@ parse_args() {
                 ;;
         esac
 
-	shift
+    shift
     done
 }
 
@@ -49,17 +49,35 @@ create_xdg_base_directories() {
 }
 
 create_workspace_directories() {
-    mkdir -p $WORKSPACE_DIR
+    mkdir -p "${WORKSPACE_DIR}"
+    mkdir -p "${WORKSPACE_DIR}/repos"
+    mkdir -p "${WORKSPACE_DIR}/research"
+    mkdir -p "${WORKSPACE_DIR}/sandbox"
+    mkdir -p "${WORKSPACE_DIR}/cp"
 }
 
-deploy() {
-    # 
+clone_dotfiles() {
+    if [ -d "${DOTFILES_DIR}" ]; then
+        if [ -n "${DRY_RUN}" ]; then
+            printf "\033[1;37;45m SKIPPED (dry run) \033[m Updating dotfiles...\n"
+        else
+            echo "Updating dotfiles..."
+            git -C "${DOTFILES_DIR}" pull
+        fi
+    else
+        if [ -n "${DRY_RUN}" ]; then
+            printf "\033[1;37;45m SKIPPED (dry run) \033[m Installing dotfiles...\n"
+        else
+            echo "Installing dotfiles..."
+            git clone https://github.com/Ryoga-exe/dotfiles "${DOTFILES_DIR}"
+        fi
+    fi
 }
 
 main() {
     parse_args "$@"
     create_xdg_base_directories
-
+    clone_dotfiles
 }
 
 main "$@"
