@@ -10,6 +10,7 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 # Completion
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineOption -PredictionSource History
+Import-Module posh-git
 
 # History
 Set-PSReadLineOption -HistoryNoDuplicates
@@ -70,11 +71,4 @@ if (!$?) {
 }
 
 # Utilities
-function which ($command) {
-    Get-Command -Name $command -ErrorAction SilentlyContinue |
-        Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
-}
-
-function cdgitroot {
-    Set-Location $(git rev-parse --show-toplevel)
-}
+. "$PSScriptRoot\utilities.ps1"
