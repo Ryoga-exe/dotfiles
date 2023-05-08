@@ -77,6 +77,7 @@ clone_dotfiles() {
 main() {
     parse_args "$@"
     create_xdg_base_directories
+    create_workspace_directories
     clone_dotfiles
 }
 
