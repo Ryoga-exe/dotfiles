@@ -1,11 +1,12 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+continuation_prompt = '▶▶ '
+
 format = """
 $shell\
 ($username)\
 $directory\
 ($git_branch$git_status[\ue0b0](fg:#17d7a0))\
-$fill$time\
 $line_break\
 $character\
 """
@@ -62,6 +63,11 @@ $symbol \
 """
 success_symbol = "[\u276f](#e0f8ff)"
 error_symbol = "[\u276f](#ef5350)"
+
+[os]
+format = "on [($name $symbol)]($style)"
+style = "bg:blue"
+disabled = false
 
 [os.symbols]
 Alpine = "\uf300 "
