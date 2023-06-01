@@ -40,10 +40,10 @@ parse_args() {
 
 create_symbolic_link() {
     if [ -n "${DRY_RUN}" ]; then
-        printf "  \x1b[35mSkipped (dry run):\x1b[39m \x1b[36m%s\x1b[39m -> \x1b[36m%s\x1b[39m\n" "$1" "$2"
+        printf "\033[1;37;45m SKIPPED (dry run) \033[m $1 -> $2\n"
     else
         ln -fns "$1" "$2"
-        printf "  \x1b[32mCreated:\x1b[39m \x1b[36m%s\x1b[39m -> \x1b[36m%s\x1b[39m\n" "$1" "$2"
+        printf "$1 -> $2"
     fi
 }
 
