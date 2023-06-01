@@ -74,11 +74,30 @@ clone_dotfiles() {
     fi
 }
 
+cd_dotfiles_dir() {
+    if [ -n "${DRY_RUN}" ]; then
+        printf "\033[1;37;45m SKIPPED (dry run) \033[m cd dotfiles...\n"
+    else
+        echo "cd dotfiles..."
+    fi
+}
+
+deploy() {
+    if [ -n "${DRY_RUN}" ]; then
+        printf "\033[1;37;45m SKIPPED (dry run) \033[m deploy...\n"
+    else
+        echo "deploy..."
+        sh "${DOTFILES_DIR}/scripts/deploy.sh" "$@"
+    fi
+}
+
 main() {
     parse_args "$@"
     create_xdg_base_directories
     create_workspace_directories
     clone_dotfiles
+    cd_dotfiles_dir
+    deploy
 }
 
 main "$@"
