@@ -40,11 +40,11 @@ parse_args() {
 
 create_symbolic_link() {
     if [ -n "${DRY_RUN}" ]; then
-        printf "\033[1;37;45m SKIPPED (dry run) \033[m $1 -> $2\n"
+        printf "\033[1;37;45m SKIPPED (dry run) \033[m \033[32mCreated Symbolic Link\033[m: \033[36m$1\033[m -> \033[36m$2\033[m\n"
     else
         mkdir -p "${HOME}/$(dirname $to)"
         ln -fns "$1" "$2"
-        printf "$1 -> $2"
+        printf "\033[32mCreated Symbolic Link\033[m: \033[36m$1\033[m -> \033[36m$2\033[m\n"
     fi
 }
 
