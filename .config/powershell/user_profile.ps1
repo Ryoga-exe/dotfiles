@@ -1,6 +1,8 @@
 # Encoding
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
-$env:LESSCHARSET = "utf-8"
+
+# Env
+. "$PSScriptRoot\env.ps1"
 
 # PSReadLine
 Set-PSReadLineOption -EditMode Emacs
@@ -35,7 +37,6 @@ else {
 fnm env --use-on-cd | Out-String | Invoke-Expression
 
 # Starship
-$env:STARSHIP_CONFIG = "$env:XDG_CONFIG_HOME\starship.toml"
 Invoke-Expression (&starship init powershell) -ErrorAction SilentlyContinue
 if (!$?) {
     Write-Warning 'Starship is not installed, try "winget install -e --id Starship.Starship"'
@@ -57,9 +58,6 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 if (Test-Path -Path "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion") {
     Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
 }
-
-# Git
-$env:GIT_SSH = "C:\Windows\System32\OpenSSH\ssh.exe"
 
 # Alias
 . "$PSScriptRoot\alias.ps1"
