@@ -56,7 +56,7 @@ main() {
         length=${#current}
         length=$((length + 1))
         to=`echo ${from} | sed -e "s/^.\{${length}\}//"`
-        create_symbolic_link "${from}" "${to}"
+        create_symbolic_link "${from}" "${HOME}/${to}"
 	done
 }
 
