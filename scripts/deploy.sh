@@ -51,13 +51,12 @@ main() {
     parse_args "$@"
     currentDir=`pwd`
     length=${#currentDir}
+    length=$((length + 1))
     for file in `\find ./.config -maxdepth 5 -type f`; do
         from=$(cd $(dirname $file); pwd)/$(basename $file)
-        length=${#current}
-        length=$((length + 1))
         to=`echo ${from} | sed -e "s/^.\{${length}\}//"`
         create_symbolic_link "${from}" "${HOME}/${to}"
-	done
+    done
 }
 
 main "$@"
