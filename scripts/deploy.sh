@@ -51,7 +51,7 @@ create_symbolic_link() {
 main() {
     parse_args "$@"
     currentDir=`pwd`
-    create_symbolic_link ./zshenv "${HOME}/.zshenv"
+    create_symbolic_link ./.zshenv "${HOME}/.zshenv"
     length=${#currentDir}
     length=$((length + 1))
     for file in `\find ./.config -maxdepth 30 -type f`; do
