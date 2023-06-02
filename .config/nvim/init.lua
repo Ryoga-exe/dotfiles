@@ -1,6 +1,6 @@
 require('ryoga-exe.core.options')
 require('ryoga-exe.core.keymaps')
-require('ryoga-exe.core.colorsheme')
+require('ryoga-exe.core.colorscheme')
 
 local has = vim.fn.has
 local is_mac = has "macunix"
