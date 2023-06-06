@@ -17,7 +17,7 @@ irm windows.dotfiles.ryoga.dev | iex
 
 ## Stack
 
-- Powershell
+- PowerShell
 - Z Shell
 - Starship
 - Neovim
