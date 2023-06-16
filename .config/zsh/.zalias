@@ -7,7 +7,7 @@ if [[ $(command -v exa) ]]; then
 fi
 
 alias vim=nvim
-alias -g CC='| xclip -selection c'
+alias -g CC='xclip -selection c'
 alias cdgitroot='cd "$(git rev-parse --show-toplevel)"'
 alias cd.=cdgitroot
 alias cls=clear
