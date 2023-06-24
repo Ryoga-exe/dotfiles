@@ -323,7 +323,14 @@
         }
     ],
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[astro]": {
+        "editor.tabSize": 2
+    },
+    "[javascriptreact]": {
+        "editor.tabSize": 2
     },
     "typescript.updateImportsOnFileMove.enabled": "always",
     "tabnine.experimentalAutoImports": true,
@@ -346,6 +353,7 @@
         "editor.formatOnType": true
     },
     "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.clang_format_style": "Google",
     "terminal.integrated.tabFocusMode": false,
     // "latex-workshop.chktex.enabled": true
 }
