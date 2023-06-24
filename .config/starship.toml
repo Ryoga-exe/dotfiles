@@ -69,7 +69,7 @@ disabled = false
 format = "[\ue0b6[ \uf64f $time ](fg:#ffffff bg:#40c4ff)\ue0b4](fg:#40c4ff)"
 
 [cmd_duration]
-format = "[\ue0b0](inverted fg:#303030)[ \uf252 $duration ](fg:#888860 bg:#303030)[\ue0b0](fg:#303030)"
+format = "[\ue0b6](fg:#303030)[ \uf252 $duration ](fg:#888860 bg:#303030)[\ue0b0](fg:#303030)"
 
 [character]
 format = """
