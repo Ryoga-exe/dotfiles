@@ -9,3 +9,4 @@ export EDITOR=nvim
 if [[ $(command -v wslpath) ]]; then
     export WINHOME="/mnt/c/Users/$USER/"
 fi
+. "$HOME/.cargo/env"
