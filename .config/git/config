@@ -7,6 +7,8 @@
     sync = !git switch $(git remote show origin | grep 'HEAD branch' | awk '{print $NF}') && git pull origin $(git remote show origin | grep 'HEAD branch' | awk '{print $NF}') && git fetch --prune && git branch -d $(git branch --merged | grep -v '*')
     tags = !git tag --sort=-creatordate | head -n 10
     hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+    chmod = "!f(){ cd ${GIT_PREFIX:-.} && git update-index --add --chmod=$1 ${@:2:($#-1)};};f"
+    addx = update-index --add --chmod=+x
     open = !gh open
 [merge]
     ff = false
@@ -15,6 +17,7 @@
     default = current
 [pull]
     ff = only
+    rebase = false
 [github]
     user = Ryoga-exe
 [init]
