@@ -313,7 +313,7 @@
         "defaults": {
             "colorScheme": "One Half Dark",
             "font": {
-                "face": "Hack NF",
+                "face": "Hack Nerd Font",
                 "size": 12,
                 "weight": "normal"
             },
