@@ -9,3 +9,12 @@ if [[ $(command -v wslpath) ]]; then
         ( setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork & ) >/dev/null 2>&1
     fi
 fi
+
+# linuxbrew
+if [ -e /home/linuxbrew/.linuxbrew/bin/brew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+elif [ -e homebrew/bin/brew ]; then
+    eval "$(homebrew/bin/brew shellenv)"
+elif [ -e /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
