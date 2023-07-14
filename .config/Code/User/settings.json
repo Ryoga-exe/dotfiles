@@ -353,7 +353,7 @@
         "editor.formatOnType": true
     },
     "C_Cpp.errorSquiggles": "enabled",
-    "C_Cpp.clang_format_style": "Google",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4 }",
     "terminal.integrated.tabFocusMode": false,
     // "latex-workshop.chktex.enabled": true
 }
