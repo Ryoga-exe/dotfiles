@@ -35,6 +35,9 @@ function select-history() {
 zle -N select-history
 bindkey '^r' select-history
 
+# fnm
+eval "$(fnm env --use-on-cd)"
+
 # Starship
 if [[ $(command -v starship) ]]; then
     eval "$(starship init zsh)"
