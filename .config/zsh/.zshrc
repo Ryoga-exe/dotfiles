@@ -27,6 +27,14 @@ source $ZDOTDIR/.zalias
 setopt auto_cd
 setopt no_flow_control
 
+# fzf
+function select-history() {
+    BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+    CURSOR=$#BUFFER
+}
+zle -N select-history
+bindkey '^r' select-history
+
 # Starship
 if [[ $(command -v starship) ]]; then
     eval "$(starship init zsh)"
