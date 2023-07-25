@@ -30,3 +30,12 @@
 [core]
     quotepath = false
     ignorecase = false
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false
+    line-numbers = true
+[diff]
+    colorMoved = default
