@@ -2,8 +2,8 @@
 if [[ $(command -v exa) ]]; then
     alias ls='exa --icons'
     alias ll='exa -aahl --icons --group-directories-first'
-    alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
-    alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
+    alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons --group-directories-first'
+    alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons --group-directories-first'
 fi
 
 # bat
