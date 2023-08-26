@@ -18,3 +18,4 @@ alias -g CC='xclip -selection c'
 alias cdgitroot='cd "$(git rev-parse --show-toplevel)"'
 alias cd.=cdgitroot
 alias cls=clear
+alias take='(){ mkdir -p $1 && cd $1 }'
