@@ -19,3 +19,13 @@ function open ($path) {
         Write-Error -Message "Error: $path does not exist or is not a directory." -Category InvalidArgument
     }
 }
+
+function take ($path) {
+    if ([string]::IsNullOrEmpty($path)) {
+        Write-Error -Message "Error: missing path." -Category InvalidArgument
+    }
+    else {
+        New-Item -Path . -Nam $path -ItemType "directory"
+        Set-Location -Path $path
+    }
+}
