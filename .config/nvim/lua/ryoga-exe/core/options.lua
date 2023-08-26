@@ -20,6 +20,7 @@ opt.smartindent = true
 opt.wrap = false
 
 -- search settings
+opt.hlsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 
@@ -27,6 +28,11 @@ opt.smartcase = true
 opt.cursorline = true
 
 -- appearance
+opt.title = true
+opt.scrolloff = 10
+opt.showcmd = true
+opt.cmdheight = 1
+opt.laststatus = 2
 opt.termguicolors = true
 opt.background = 'dark'
 opt.signcolumn = 'yes'
@@ -38,4 +44,7 @@ opt.backspace = 'indent,eol,start'
 opt.splitright = true
 opt.splitbelow = true
 
+opt.backup = false
+opt.wildignore:append { '*/node_modules/*' }
 opt.iskeyword:append('-')
+opt.formatoptions:append { 'r' }
