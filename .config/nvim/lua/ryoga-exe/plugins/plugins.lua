@@ -16,6 +16,8 @@ return {
         config = function()
             require('nvim-treesitter.configs').setup {
                 ensure_installed = {
+                    "cpp",
+                    "c",
                     "typescript",
                     "javascript",
                     "rust",
@@ -38,8 +40,28 @@ return {
                 },
                 highlight = {
                     enable = true,
+                    disable = {},
+                    additional_vim_regex_highlighting = false,
                 },
             }
         end
-    }
+    },
+    {
+        'nvim-tree/nvim-tree.lua',
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        },
+        config = function()
+            require('nvim-tree').setup({
+            })
+        end,
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('lualine').setup({
+            })
+        end
+    },
 }
