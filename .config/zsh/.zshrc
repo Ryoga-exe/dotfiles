@@ -26,6 +26,7 @@ source $ZDOTDIR/.zalias
 # Utilities
 setopt auto_cd
 setopt no_flow_control
+setopt no_beep
 
 # fzf
 function select-history() {
