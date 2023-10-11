@@ -322,7 +322,7 @@
             "opacity": 70,
             "useAcrylic": true,
             "padding": "8, 8, 8, 8",
-            "scrollbarState": "visible"
+            "scrollbarState": "hidden"
         },
         "list": [
             {
