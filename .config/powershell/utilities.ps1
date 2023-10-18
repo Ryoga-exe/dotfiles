@@ -29,3 +29,17 @@ function take ($path) {
         Set-Location -Path $path
     }
 }
+
+# eza
+function ezals ($path) {
+    eza --icons $path
+}
+function ezall ($path) {
+    eza -aahl --icons --group-directories-first $path
+}
+function ezalt ($path) {
+    eza -T -L 3 -a -I "node_modules|.git|.cache" --icons --group-directories-first $path
+}
+function ezaltl ($path) {
+    eza -T -L 3 -a -I "node_modules|.git|.cache" -l --icons --group-directories-first $path
+}

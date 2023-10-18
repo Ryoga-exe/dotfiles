@@ -17,12 +17,6 @@ Import-Module posh-git
 # History
 Set-PSReadLineOption -HistoryNoDuplicates
 
-# Terminal Icons
-Import-Module -Name Terminal-Icons -ErrorAction SilentlyContinue
-if (!$?) {
-    Write-Warning 'Terminal-Icons is not installed, try "Install-Module -Name Terminal-Icons -Repository PSGallery"'
-}
-
 # Fzf
 Import-Module -Name PSFzf -ErrorAction SilentlyContinue
 if ($?) {
