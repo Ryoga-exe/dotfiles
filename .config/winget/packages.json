@@ -35,7 +35,7 @@
                     "PackageIdentifier": "Google.Chrome"
                 },
                 {
-                    "PackageIdentifier": "Google.Drive"
+                    "PackageIdentifier": "Google.GoogleDrive"
                 },
                 {
                     "PackageIdentifier": "Google.JapaneseIME"
@@ -81,9 +81,6 @@
                 },
                 {
                     "PackageIdentifier": "Starship.Starship"
-                },
-                {
-                    "PackageIdentifier": "stedolan.jq"
                 },
                 {
                     "PackageIdentifier": "Streamlabs.StreamlabsOBS"
