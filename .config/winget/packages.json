@@ -1,11 +1,20 @@
 {
     "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-    "CreationDate": "2023-04-03T23:55:00.000+09:00",
+    "CreationDate": "2023-12-11T22:30:00.000+09:00",
     "Sources": [
         {
             "Packages": [
                 {
+                    "PackageIdentifier": "7zip.7zip"
+                },
+                {
+                    "PackageIdentifier": "Audacity.Audacity"
+                },
+                {
                     "PackageIdentifier": "bmatzelle.Gow"
+                },
+                {
+                    "PackageIdentifier": "Discord.Discord"
                 },
                 {
                     "PackageIdentifier": "Docker.DockerDesktop"
@@ -41,6 +50,18 @@
                     "PackageIdentifier": "Microsoft.OpenSSH.Beta"
                 },
                 {
+                    "PackageIdentifier": "Microsoft.PowerShell"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.PowerToys"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.VisualStudio.2022.Community"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.VisualStudioCode"
+                },
+                {
                     "PackageIdentifier": "Microsoft.WindowsTerminal"
                 },
                 {
@@ -50,7 +71,13 @@
                     "PackageIdentifier": "Neovim.Neovim"
                 },
                 {
+                    "PackageIdentifier": "NickeManarin.ScreenToGif"
+                },
+                {
                     "PackageIdentifier": "Schniz.fnm"
+                },
+                {
+                    "PackageIdentifier": "SlackTechnologies.Slack"
                 },
                 {
                     "PackageIdentifier": "Starship.Starship"
@@ -66,6 +93,9 @@
                 },
                 {
                     "PackageIdentifier": "Valve.Steam"
+                },
+                {
+                    "PackageIdentifier": "Zoom.Zoom"
                 }
             ],
             "SourceDetails": {
@@ -78,36 +108,6 @@
         {
             "Packages": [
                 {
-                    "PackageIdentifier": "XPDNKVCX4QD2DC"
-                },
-                {
-                    "PackageIdentifier": "XP8K0J757HHRDW"
-                },
-                {
-                    "PackageIdentifier": "XPDC2RH70K22MN"
-                },
-                {
-                    "PackageIdentifier": "9MZ1SNWT0N5D"
-                },
-                {
-                    "PackageIdentifier": "XP89DCGQ3K6VLD"
-                },
-                {
-                    "PackageIdentifier": "XPDCFJDKLZJLP8"
-                },
-                {
-                    "PackageIdentifier": "XP9KHM4BK9FZ7Q"
-                },
-                {
-                    "PackageIdentifier": "9N3SQK8PDS8G"
-                },
-                {
-                    "PackageIdentifier": "9WZDNCRDK3WP"
-                },
-                {
-                    "PackageIdentifier": "XP99J3KP4XZ4VV"
-                },
-                {
                     "PackageIdentifier": "9PGCV4V3BK4W"
                 }
             ],
@@ -119,5 +119,5 @@
             }
         }
     ],
-    "WinGetVersion": "1.4.10173"
+    "WinGetVersion": "1.6.3133"
 }
