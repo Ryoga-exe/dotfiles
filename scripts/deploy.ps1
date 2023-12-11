@@ -30,7 +30,7 @@ if ($PSVersionTable.PSVersion.Major -gt 4) {
             
             # profile.ps1 -> $PROFILE
             New-DirectoryIfNotExist -target (Join-Path $HOME Documents\PowerShell)
-            New-SymbolicLink -from (Get-Item .\profile.ps1).FullName -to (Join-Path $HOME Document\PowerShell\Microsoft.PowerShell_profile.ps1)
+            New-SymbolicLink -from (Get-Item .\profile.ps1).FullName -to (Join-Path $HOME Documents\PowerShell\Microsoft.PowerShell_profile.ps1)
             
             # .config -> $HOME\.config
             $itemList = Get-ChildItem .\.config -Recurse
