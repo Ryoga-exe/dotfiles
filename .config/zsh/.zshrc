@@ -41,8 +41,3 @@ eval "$(fnm env --use-on-cd)"
 
 # Sheldon
 eval "$(sheldon source)"
-
-# Starship
-if [[ $(command -v starship) ]]; then
-    eval "$(starship init zsh)"
-fi
