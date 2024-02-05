@@ -10,6 +10,9 @@ github = "zsh-users/zsh-autosuggestions"
 use = ["{{ name }}.zsh"]
 apply = ["defer"]
 
+[plugins.zsh-autosuggestions.hooks]
+post = "bindkey '^ ' autosuggest-accept"
+
 [plugins.zsh-autopair]
 github = "hlissner/zsh-autopair"
 apply = ["defer"]
