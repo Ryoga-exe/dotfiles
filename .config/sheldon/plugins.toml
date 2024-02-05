@@ -10,6 +10,10 @@ github = "zsh-users/zsh-autosuggestions"
 use = ["{{ name }}.zsh"]
 apply = ["defer"]
 
+[plugins.zsh-autopair]
+github = "hlissner/zsh-autopair"
+apply = ["defer"]
+
 [plugins.zsh-z]
 github = "agkozak/zsh-z"
 
