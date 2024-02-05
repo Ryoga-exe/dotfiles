@@ -2,14 +2,19 @@ shell = "zsh"
 
 [plugins]
 
-[plugins.starship]
-inline = 'eval "$(starship init zsh)"'
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+apply = ["defer"]
 
 [plugins.zsh-z]
 github = "agkozak/zsh-z"
 
-[plugins.zsh-defer]
-github = "romkatv/zsh-defer"
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
+
+[templates]
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
