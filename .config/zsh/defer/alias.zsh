@@ -3,7 +3,9 @@ if [[ $(command -v eza) ]]; then
     alias ls='eza --icons'
     alias ll='eza -aahl --icons --group-directories-first'
     alias lt='eza -T -L 3 -a -I "node_modules|.git|.cache" --icons --group-directories-first'
+    alias ltt='eza -T -a -I "node_modules|.git|.cache" --icons --group-directories-first'
     alias ltl='eza -T -L 3 -a -I "node_modules|.git|.cache" -l --icons --group-directories-first'
+    alias lttl='eza -T -L 3 -a -I "node_modules|.git|.cache" -l --icons --group-directories-first'
 fi
 
 # bat
@@ -13,7 +15,11 @@ elif [[ $(command -v batcat) ]]; then
     alias cat=batcat
 fi
 
-alias vim=nvim
+# neovim
+if [[ $(command -v nvim) ]]; then
+    alias vim=nvim
+fi
+
 alias -g CC='xclip -selection c'
 alias cdgitroot='cd "$(git rev-parse --show-toplevel)"'
 alias cd.=cdgitroot

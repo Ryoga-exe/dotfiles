@@ -23,5 +23,10 @@ github = "agkozak/zsh-z"
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
 
+[plugins.local-defer]
+local = "~/.config/zsh/defer"
+use = ["*.zsh"]
+apply = ["defer"]
+
 [templates]
 defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"

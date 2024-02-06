@@ -20,9 +20,6 @@ zstyle ':completion:*' format '%B%F{blue}%d%f%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:default' menu select=2
 
-# Alias
-source $ZDOTDIR/.zalias
-
 # Utilities
 setopt auto_cd
 setopt no_flow_control
