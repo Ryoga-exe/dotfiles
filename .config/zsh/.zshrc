@@ -13,6 +13,9 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 
+setopt auto_pushd
+setopt pushd_ignore_dups
+
 # Completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
