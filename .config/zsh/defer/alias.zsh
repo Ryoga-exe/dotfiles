@@ -18,6 +18,7 @@ fi
 # neovim
 if [[ $(command -v nvim) ]]; then
     alias vim=nvim
+    alias vi=nvim
 fi
 
 alias -g CC='xclip -selection c'
