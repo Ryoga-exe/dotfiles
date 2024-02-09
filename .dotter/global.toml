@@ -4,12 +4,7 @@
 depends = []
 
 [default.files]
-AppData = ""
-LICENSE = ""
-"README.md" = ""
-"install.ps1" = ""
-"install.sh" = ""
-"profile.ps1" = ""
-scripts = ""
+".config" = "~/.config"
+".zshenv" = "~/.zshenv"
 
 [default.variables]
