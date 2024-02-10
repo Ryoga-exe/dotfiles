@@ -5,7 +5,7 @@ if [[ $(command -v eza) ]]; then
     alias lt='eza -T -L 3 -a -I "node_modules|.git|.cache" --icons --group-directories-first'
     alias ltt='eza -T -a -I "node_modules|.git|.cache" --icons --group-directories-first'
     alias ltl='eza -T -L 3 -a -I "node_modules|.git|.cache" -l --icons --group-directories-first'
-    alias lttl='eza -T -L 3 -a -I "node_modules|.git|.cache" -l --icons --group-directories-first'
+    alias lttl='eza -T -a -I "node_modules|.git|.cache" -l --icons --group-directories-first'
 fi
 
 # bat
