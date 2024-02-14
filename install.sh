@@ -85,9 +85,10 @@ cd_dotfiles_dir() {
 deploy() {
     if [ -n "${DRY_RUN}" ]; then
         printf "\033[1;37;45m SKIPPED (dry run) \033[m deploy...\n"
+        dotter deploy --dry-run
     else
         echo "deploy..."
-        sh "${DOTFILES_DIR}/scripts/deploy.sh" "$@"
+        dotter deploy
     fi
 }
 

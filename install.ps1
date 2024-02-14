@@ -33,6 +33,11 @@ if (!(Get-Command -Name scoop -ErrorAction SilentlyContinue)) {
 
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 
+if (!(Get-Command -Name dotter -ErrorAction SilentlyContinue)) {
+    Write-Host "Install dotter..."
+    scoop install dotter
+}
+
 Write-Host "Clone dotfiles repository..."
 git clone "https://github.com/Ryoga-exe/dotfiles.git" "$dotfilesDir"
 
@@ -40,4 +45,4 @@ Write-Host "Set Location to ~\workspace\repos\dotfiles"
 Set-Location "$dotfilesDir"
 
 Write-Host "Deploy..."
-Start-Process powershell.exe ("-NoProfile -Command cd " + $dotfilesDir + "; scripts\deploy.ps1; Start-Sleep -Milliseconds 1000") -Verb runas
+dotter deploy
