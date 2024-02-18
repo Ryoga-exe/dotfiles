@@ -4,7 +4,13 @@
 depends = []
 
 [default.files]
-".config" = "~/.config"
+".config/Code" = "~/.config/Code"
+".config/git" = "~/.config/git"
+".config/nvim" = "~/.config/nvim"
+# ".config/powershell" = "~/.config/powershell"
+".config/sheldon" = { target = "~/.config/sheldon", type = "symbolic" }
+".config/starship" = "~/.config/starship"
+".config/zsh" = "~/.config/zsh"
 ".zshenv" = "~/.zshenv"
 
 [default.variables]
