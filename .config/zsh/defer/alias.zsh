@@ -23,7 +23,8 @@ fi
 
 alias v='fd --type f --hidden --exclude .git --exclude node_modules --exclude .cache | fzf --no-sort +m --query "$LBUFFER" --prompt "Open with nvim >" | xargs nvim'
 alias -g CC='xclip -selection c'
-alias cdgitroot='cd "$(git rev-parse --show-toplevel)"'
-alias cd.=cdgitroot
+alias cd-gitroot='cd "$(git rev-parse --show-toplevel)"'
+alias cd.=cd-gitroot
+alias cdu=cd-gitroot
 alias cls=clear
 alias take='(){ mkdir -p $1 && cd $1 }'
