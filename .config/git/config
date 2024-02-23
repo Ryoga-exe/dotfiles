@@ -11,6 +11,7 @@
     addx = update-index --add --chmod=+x
     open = !gh open
     unstage = restore --staged
+    st = status --short
 [merge]
     ff = false
     conflictstyle = diff3
