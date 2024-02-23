@@ -2,10 +2,10 @@
 if [[ $(command -v eza) ]]; then
     alias ls='eza --icons'
     alias ll='eza -aahl --icons --group-directories-first'
-    alias lt='eza -T -L 3 -a -I "node_modules|.git|.cache" --icons --group-directories-first'
-    alias ltt='eza -T -a -I "node_modules|.git|.cache" --icons --group-directories-first'
-    alias ltl='eza -T -L 3 -a -I "node_modules|.git|.cache" -l --icons --group-directories-first'
-    alias lttl='eza -T -a -I "node_modules|.git|.cache" -l --icons --group-directories-first'
+    alias lt='eza -T -L 3 -a -I "node_modules|.git|.cache|zig-cache" --icons --group-directories-first'
+    alias ltt='eza -T -a -I "node_modules|.git|.cache|zig-cache" --icons --group-directories-first'
+    alias ltl='eza -T -L 3 -a -I "node_modules|.git|.cache|zig-cache" -l --icons --group-directories-first'
+    alias lttl='eza -T -a -I "node_modules|.git|.cache|zig-cache" -l --icons --group-directories-first'
 fi
 
 # bat
@@ -21,7 +21,7 @@ if [[ $(command -v nvim) ]]; then
     alias vi=nvim
 fi
 
-alias v='fd --type f --hidden --exclude .git --exclude node_modules --exclude .cache | fzf --no-sort +m --query "$LBUFFER" --prompt "Open with nvim >" | xargs nvim'
+alias v='fd --type f --hidden --exclude .git --exclude node_modules --exclude .cache --exclude zig-cache | fzf --no-sort +m --query "$LBUFFER" --prompt "Open with nvim >" | xargs nvim'
 alias -g CC='xclip -selection c'
 alias cd-gitroot='cd "$(git rev-parse --show-toplevel)"'
 alias cd.=cd-gitroot
