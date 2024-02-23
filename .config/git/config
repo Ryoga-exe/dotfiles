@@ -12,7 +12,7 @@
     open = !gh open
     unstage = restore --staged
     st = status --short
-    a = "!git ls-files --others --exclude-standard --modified | fzf --no-sort +m --prompt 'Open with nvim >' | xargs git add"
+    a = "!git ls-files --others --exclude-standard --modified | fzf --no-sort +m --prompt 'git add >' | xargs git add"
 [merge]
     ff = false
     conflictstyle = diff3
