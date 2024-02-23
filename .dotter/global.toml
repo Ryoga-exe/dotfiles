@@ -11,6 +11,7 @@ depends = []
 ".config/sheldon" = { target = "~/.config/sheldon", type = "symbolic" }
 ".config/starship" = "~/.config/starship"
 ".config/zsh" = "~/.config/zsh"
+".config/fd" = "~/.config/fd"
 ".zshenv" = "~/.zshenv"
 
 [default.variables]
