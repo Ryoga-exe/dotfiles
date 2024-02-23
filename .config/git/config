@@ -10,6 +10,7 @@
     chmod = "!f(){ cd ${GIT_PREFIX:-.} && git update-index --add --chmod=$1 ${@:2:($#-1)};};f"
     addx = update-index --add --chmod=+x
     open = !gh open
+    unstage = restore --staged
 [merge]
     ff = false
     conflictstyle = diff3
