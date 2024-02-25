@@ -38,6 +38,10 @@ truncation_symbol = "…/"
 home_symbol = "~"
 use_os_path_sep = false
 
+[directory.substitutions]
+"~/workspace/repos/github.com" = "\uf09b "
+"~/workspace/repos/gitlab.com" = "\uf296 "
+
 [git_branch]
 format = """
 \b\
