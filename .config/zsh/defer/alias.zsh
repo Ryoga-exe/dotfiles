@@ -21,6 +21,18 @@ if [[ $(command -v nvim) ]]; then
     alias vi=nvim
 fi
 
+# ghq
+if [[ $(command -v ghq) ]]; then
+    function repos () {
+        local selected_dir=$(ghq list -p | fzf --layout=reverse --border --no-sort +m --query "$LBUFFER" --prompt "go to repo >")
+        if [ -n "$selected_dir" ]; then
+            cd $selected_dir
+        fi
+    }
+    bindkey '^]' repos
+    alias rp=repos
+fi
+
 alias v='fd --type f --hidden | fzf --layout=reverse --info=inline --border --no-sort +m --query "$LBUFFER" --prompt "Open with nvim >" --preview "if [ $(command -v bat) ]; then bat --color=always {}; elif [ $(command -v batcat) ]; then batcat --color=always {}; else cat {}; fi" | xargs nvim'
 alias -g CC='xclip -selection c'
 alias cd-gitroot='cd "$(git rev-parse --show-toplevel)"'
