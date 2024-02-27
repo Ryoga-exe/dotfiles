@@ -17,10 +17,10 @@ irm windows.dotfiles.ryoga.dev | iex
 
 ## Stack
 
-- PowerShell
+- [Dotter](https://github.com/SuperCuber/dotter) - a dotfile manager and templater
 - Z Shell
+- PowerShell
+- Sheldon
 - Starship
 - Neovim
-  - [folke/lazy.nvim](https://github.com/folke/lazy.nvim) - A modern plugin manager for Neovim
-  - [projekt0n/github-nvim-theme](https://github.com/projekt0n/github-nvim-theme) - GitHub theme for Neovim
-
+  - [AstroNvim](https://astronvim.com/) - feature-rich neovim config
