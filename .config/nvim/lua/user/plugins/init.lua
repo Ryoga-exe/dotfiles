@@ -6,6 +6,7 @@ return {
     { import = "astrocommunity.pack.cpp" },
     { import = "astrocommunity.pack.go" },
     { import = "astrocommunity.pack.zig" },
+    { import = "astrocommunity.pack.typescript-all-in-one" },
   },
   {
     "wakatime/vim-wakatime",
