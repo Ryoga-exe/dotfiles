@@ -7,7 +7,6 @@ depends = []
 ".config/Code" = "~/.config/Code"
 ".config/git" = "~/.config/git"
 ".config/nvim" = "~/.config/nvim"
-# ".config/powershell" = "~/.config/powershell"
 ".config/sheldon" = { target = "~/.config/sheldon", type = "symbolic" }
 ".config/starship" = "~/.config/starship"
 ".config/zsh" = "~/.config/zsh"
@@ -15,3 +14,35 @@ depends = []
 ".zshenv" = "~/.zshenv"
 
 [default.variables]
+
+# Shell
+[zsh]
+depends = ["sheldon", "starship"]
+
+[zsh.files]
+".config/zsh" = "~/.config/zsh"
+".zshenv" = "~/.zshenv"
+
+[powershell]
+depends = ["starship"]
+
+[powershell.files]
+".profile.ps1" = "~/.config/powershell/Microsoft.PowerShell_profile.ps1"
+".config/powershell" = "~/.config/powershell"
+
+[sheldon.files]
+".config/sheldon" = { target = "~/.config/sheldon", type = "symbolic" }
+
+[starship.files]
+".config/starship" = "~/.config/starship"
+
+# Editor
+[nvim.files]
+".config/nvim" = "~/.config/nvim"
+
+[code.files]
+".config/Code" = "~/.config/Code"
+
+# Utility
+[fd.files]
+".config/fd" = "~/.config/fd"
