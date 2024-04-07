@@ -1,19 +1,7 @@
 [helpers]
 
 [default]
-depends = []
-
-[default.files]
-".config/Code" = "~/.config/Code"
-".config/git" = "~/.config/git"
-".config/nvim" = "~/.config/nvim"
-".config/sheldon" = { target = "~/.config/sheldon", type = "symbolic" }
-".config/starship" = "~/.config/starship"
-".config/zsh" = "~/.config/zsh"
-".config/fd" = "~/.config/fd"
-".zshenv" = "~/.zshenv"
-
-[default.variables]
+depends = ["zsh", "nvim", "code", "git", "fd"]
 
 # Shell
 [zsh]
@@ -44,5 +32,8 @@ depends = ["starship"]
 ".config/Code" = "~/.config/Code"
 
 # Utility
+[git.files]
+".config/git" = "~/.config/git"
+
 [fd.files]
 ".config/fd" = "~/.config/fd"
