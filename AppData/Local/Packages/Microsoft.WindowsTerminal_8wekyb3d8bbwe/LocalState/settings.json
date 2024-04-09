@@ -1,7 +1,6 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "startOnUserLogin": false,
     "firstWindowPreference": "defaultProfile",
@@ -13,7 +12,6 @@
     "centerOnLaunch": true,
     "disabledProfileSources": [],
     "startupActions": "",
-
     "copyOnSelect": false,
     "copyFormatting": "none",
     "trimBlockSelection": true,
@@ -21,7 +19,6 @@
     "wordDelimiters": " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?│",
     "snapToGridOnResize": true,
     "minimizeToNotificationArea": false,
-
     "language": "ja-JP",
     "theme": "system",
     "alwaysShowTabs": true,
@@ -34,7 +31,6 @@
     "disableAnimations": false,
     "confirmCloseAllTabs": true,
     "experimental.useBackgroundImageForWindow": false,
-
     "schemes": [
         {
             "name": "Campbell",
@@ -267,10 +263,8 @@
             "brightYellow": "#FFFF00"
         }
     ],
-
     "experimental.rendering.forceFullRepaint": false,
     "experimental.rendering.software": false,
-
     "actions": [
         {
             "command": "closeWindow",
@@ -289,10 +283,6 @@
             "keys": "f11"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
             "command": {
                 "action": "copy",
                 "singleLine": false
@@ -308,7 +298,6 @@
             "keys": "alt+shift+d"
         }
     ],
-
     "profiles": {
         "defaults": {
             "colorScheme": "One Half Dark",
