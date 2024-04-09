@@ -1,3 +1,6 @@
+# Remove default alias
+Remove-Alias rm
+
 # Alias
 Set-Alias vim nvim
 Set-Alias vi nvim
