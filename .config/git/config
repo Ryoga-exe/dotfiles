@@ -19,6 +19,7 @@
 [push]
     default = current
 [pull]
+    default = current
     ff = only
     rebase = false
 [github]
