@@ -9,6 +9,11 @@ return {
   },
 
   {
+    "wakatime/vim-wakatime",
+    lazy = false,
+  },
+
+  {
     "goolord/alpha-nvim",
     opts = function(_, opts)
       -- customize the dashboard header
