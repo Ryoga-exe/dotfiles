@@ -40,3 +40,4 @@ alias cd.=cd-gitroot
 alias cdu=cd-gitroot
 alias cls=clear
 alias take='(){ mkdir -p $1 && cd $1 }'
+alias :q=exit
