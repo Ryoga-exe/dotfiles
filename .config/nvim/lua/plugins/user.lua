@@ -14,6 +14,11 @@ return {
   },
 
   {
+    "skanehira/jumpcursor.vim",
+    lazy = false,
+  },
+
+  {
     "goolord/alpha-nvim",
     opts = function(_, opts)
       -- customize the dashboard header
