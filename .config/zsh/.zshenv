@@ -9,6 +9,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export GEM_HOME=$HOME/gems
 export PATH=$PATH:$GEM_HOME/bin
+export PATH=$PATH:$HOME/zig/bin
 
 # WSL
 if [[ $(command -v wslpath) ]]; then
