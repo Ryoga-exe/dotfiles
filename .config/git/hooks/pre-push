@@ -35,13 +35,4 @@ function restrict_push() {
 
 restrict_push
 
-# kick local hooks
-git_root=`git rev-parse --show-superproject-working-tree --show-toplevel | head -1`
-hook_name=`basename $0`
-local_hook="${git_root}/.git/hooks/${hook_name}"
-
-if [ -e $local_hook ]; then
-  echo "$lines" | bash "$local_hook" $*
-  exit "$?"
-fi
-
+source `dirname ${0}`/_kick-local-hook

@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+git_root=`git rev-parse --show-superproject-working-tree --show-toplevel | head -1`
+hook_name=`basename $0`
+local_hook="${git_root}/.git/hooks/${hook_name}"
+
+if [ -e $local_hook ]; then
+  source $local_hook
+fi
