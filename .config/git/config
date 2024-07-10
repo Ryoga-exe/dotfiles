@@ -34,6 +34,7 @@
 [core]
     quotepath = false
     ignorecase = false
+    hooksPath = ~/.config/git/hooks
     autocrlf = input
     pager = delta
 [interactive]

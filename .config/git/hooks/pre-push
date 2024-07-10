@@ -1,0 +1,47 @@
+#!/bin/bash -e
+
+lines="$(cat)"
+
+function ask_proceed() {
+  message='\033[33mHey! You are trying to push to the %s branch! Do you want to proceed anyway?\033[m [y/N]:'
+  printf "${message}" "${1}"
+
+  exec < /dev/tty
+  read yn
+  if [[ "$yn" =~ ^[yY]$ ]]; then
+    exit 0
+  fi
+
+  exit 1
+}
+
+# branch protection
+function restrict_push() {
+  echo "$lines" | while read local_ref local_sha1 remote_ref remote_sha1
+  do
+    if [[ "$remote_ref" = "refs/heads/master" ]]; then
+      ask_proceed "master"
+    fi
+
+    if [[ "${remote_ref}" = "refs/heads/main" ]]; then
+      ask_proceed "main"
+    fi
+
+    if [[ "${remote_ref}" = "refs/heads/trunk" ]]; then
+      ask_proceed "trunk"
+    fi
+  done
+}
+
+restrict_push
+
+# kick local hooks
+git_root=`git rev-parse --show-superproject-working-tree --show-toplevel | head -1`
+hook_name=`basename $0`
+local_hook="${git_root}/.git/hooks/${hook_name}"
+
+if [ -e $local_hook ]; then
+  echo "$lines" | bash "$local_hook" $*
+  exit "$?"
+fi
+
