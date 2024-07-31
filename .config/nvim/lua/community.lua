@@ -10,4 +10,5 @@ return {
   { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
+  { import = "astrocommunity.pack.typst" },
 }
