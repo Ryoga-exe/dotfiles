@@ -33,13 +33,24 @@ if [[ $(command -v ghq) ]]; then
     alias rp=repos
 fi
 
+# clipboard
+if [[ $(command -v wl-copy) ]]; then
+    alias -g CC='wl-copy'
+    alias -g CP='wl-paste'
+elif [[ $(command -v pbcopy) ]]; then
+    alias -g CC='pbcopy'
+    alias -g CP='pbpaste'
+elif [[ $(command -v xclip) ]]; then
+    alias -g CC='xclip -selection c'
+    alias -g CP='xclip -selection c -out'
+fi
+
 alias v='(){
     target=$(fd --type f --hidden | fzf --layout=reverse --info=inline --border --no-sort +m --query "$LBUFFER" --prompt "Open with nvim >" --preview "if [ $(command -v bat) ]; then bat --color=always {}; elif [ $(command -v batcat) ]; then batcat --color=always {}; else cat {}; fi")
     if [ -n "$target" ]; then
         nvim $target
     fi
 }'
-alias -g CC='xclip -selection c'
 alias cd-gitroot='cd "$(git rev-parse --show-toplevel)"'
 alias cd.=cd-gitroot
 alias cdu=cd-gitroot
