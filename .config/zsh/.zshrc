@@ -48,3 +48,6 @@ if [[ ! -r "$sheldon_cache" || "$sheldon_toml" -nt "$sheldon_cache" ]]; then
 fi
 source "$sheldon_cache"
 unset cache_dir sheldon_cache sheldon_toml
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
