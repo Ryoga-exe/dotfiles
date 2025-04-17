@@ -1,3 +1,4 @@
 {
-  "enable_autofix": true
+  "$schema": "https://raw.githubusercontent.com/zigtools/zls/refs/heads/master/schema.json",
+  "warn_style": true
 }
