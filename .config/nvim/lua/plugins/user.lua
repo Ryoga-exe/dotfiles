@@ -1,22 +1,27 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
--- Here are some examples:
-
 ---@type LazySpec
 return {
 
-  -- == Examples of Adding Plugins ==
-
-  "andweeb/presence.nvim",
+  -- "andweeb/presence.nvim", -- discord rich presence
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
   },
 
-  -- == Examples of Overriding Plugins ==
+  {
+    "wakatime/vim-wakatime",
+    lazy = false,
+  },
+
+  {
+    "masisz/ashikaga.nvim",
+    lazy = false,
+  },
+
+  {
+    "skanehira/jumpcursor.vim",
+    lazy = false,
+  },
 
   -- customize dashboard options
   {
@@ -25,25 +30,20 @@ return {
       dashboard = {
         preset = {
           header = table.concat({
-            " █████  ███████ ████████ ██████   ██████ ",
-            "██   ██ ██         ██    ██   ██ ██    ██",
-            "███████ ███████    ██    ██████  ██    ██",
-            "██   ██      ██    ██    ██   ██ ██    ██",
-            "██   ██ ███████    ██    ██   ██  ██████ ",
-            "",
-            "███    ██ ██    ██ ██ ███    ███",
-            "████   ██ ██    ██ ██ ████  ████",
-            "██ ██  ██ ██    ██ ██ ██ ████ ██",
-            "██  ██ ██  ██  ██  ██ ██  ██  ██",
-            "██   ████   ████   ██ ██      ██",
+            [[           /＾>》, -―‐‐＜＾}           ]],
+            [[         ./:::/,≠´::::::ヽ.            ]],
+            [[        /::::〃::::／}::丿ハ           ]],
+            [[      ./:::::i{l|／  ﾉ／ }::}          ]],
+            [[     /:::::::瓜イ＞  ´＜ ,:ﾉ           ]],
+            [[   ./::::::|ﾉﾍ.{､  (_ﾌ_ノﾉイ＿         ]],
+            [[   |:::::::|／}｀ｽ /          /        ]],
+            [[.  |::::::|(_:::つ/         /  neovim!]],
+            [[.￣￣￣￣￣￣￣＼/＿＿＿＿＿/￣￣￣￣￣]],
           }, "\n"),
         },
       },
     },
   },
-
-  -- You can disable default plugins as follows:
-  { "max397574/better-escape.nvim", enabled = false },
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
@@ -84,5 +84,28 @@ return {
         Rule("a", "a", "-vim")
       )
     end,
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          show_hidden_count = true,
+          hide_dotfiles = false,
+          hide_gitignored = true,
+          hide_by_name = {
+            ".git",
+            ".DS_Store",
+            "thumbs.db",
+            "node_modules",
+          },
+          never_show = {
+            ".git",
+          },
+        },
+      },
+    },
   },
 }
