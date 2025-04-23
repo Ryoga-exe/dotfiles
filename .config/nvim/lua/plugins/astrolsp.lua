@@ -43,7 +43,9 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      clangd = {
+        capabilities = { offsetEncoding = "utf-8" },
+      },
     },
     -- customize how language servers are attached
     handlers = {
@@ -78,6 +80,19 @@ return {
           callback = function() vim.lsp.buf.clear_references() end,
         },
       },
+      -- lsp_autofix = {
+      --   {
+      --     event = "BufWritePre",
+      --     desc = "autofix on save",
+      --     -- pattern = { "*.zig", "*.zon" },
+      --     callback = function()
+      --       vim.lsp.buf.code_action {
+      --         context = { only = { "source.fixAll" } },
+      --         apply = true,
+      --       }
+      --     end,
+      --   },
+      -- },
     },
     -- mappings to be set up on attaching of a language server
     mappings = {

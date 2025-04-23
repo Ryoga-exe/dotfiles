@@ -14,6 +14,11 @@ return {
   },
 
   {
+    "masisz/ashikaga.nvim",
+    lazy = false,
+  },
+
+  {
     "skanehira/jumpcursor.vim",
     lazy = false,
   },
