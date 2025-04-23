@@ -23,25 +23,29 @@ return {
     lazy = false,
   },
 
+  -- customize dashboard options
   {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        [[           /＾>》, -―‐‐＜＾}]],
-        [[         ./:::/,≠´::::::ヽ.]],
-        [[        /::::〃::::／}::丿ハ]],
-        [[      ./:::::i{l|／  ﾉ／ }::}]],
-        [[     /:::::::瓜イ＞  ´＜ ,:ﾉ]],
-        [[   ./::::::|ﾉﾍ.{､  (_ﾌ_ノﾉイ＿]],
-        [[   |:::::::|／}｀ｽ /          /]],
-        [[.  |::::::|(_:::つ/         /  neovim!]],
-        [[.￣￣￣￣￣￣￣＼/＿＿＿＿＿/￣￣￣￣￣]],
-      }
-      return opts
-    end,
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        preset = {
+          header = table.concat({
+            [[           /＾>》, -―‐‐＜＾}           ]],
+            [[         ./:::/,≠´::::::ヽ.            ]],
+            [[        /::::〃::::／}::丿ハ           ]],
+            [[      ./:::::i{l|／  ﾉ／ }::}          ]],
+            [[     /:::::::瓜イ＞  ´＜ ,:ﾉ           ]],
+            [[   ./::::::|ﾉﾍ.{､  (_ﾌ_ノﾉイ＿         ]],
+            [[   |:::::::|／}｀ｽ /          /        ]],
+            [[.  |::::::|(_:::つ/         /  neovim!]],
+            [[.￣￣￣￣￣￣￣＼/＿＿＿＿＿/￣￣￣￣￣]],
+          }, "\n"),
+        },
+      },
+    },
   },
 
+  -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
