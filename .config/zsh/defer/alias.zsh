@@ -1,6 +1,6 @@
 # eza
 if [[ $(command -v eza) ]]; then
-    alias ls='eza --icons'
+    alias ls='eza --icons=auto'
     alias ll='eza -aahl --icons --group-directories-first'
     alias lt='eza -T -L 3 -a -I "node_modules|.git|.cache|zig-cache|.zig-cache" --icons --group-directories-first'
     alias ltt='eza -T -a -I "node_modules|.git|.cache|zig-cache|.zig-cache" --icons --group-directories-first'
@@ -24,7 +24,8 @@ fi
 # ghq
 if [[ $(command -v ghq) ]]; then
     function repos () {
-        local selected_dir=$(ghq list -p | fzf --layout=reverse --border --no-sort +m --query "$LBUFFER" --prompt "go to repo >")
+        local query="$*"
+        local selected_dir=$(ghq list -p | fzf --layout=reverse --border --no-sort +m --query "$query" --prompt "go to repo >")
         if [ -n "$selected_dir" ]; then
             cd $selected_dir
         fi
