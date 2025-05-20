@@ -17,8 +17,8 @@ post = "bindkey '^ ' autosuggest-accept"
 github = "hlissner/zsh-autopair"
 apply = ["defer"]
 
-[plugins.zsh-z]
-github = "agkozak/zsh-z"
+[plugins.zoxide]
+inline = 'eval "$(zoxide init zsh)"'
 
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
