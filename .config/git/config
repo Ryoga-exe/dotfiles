@@ -1,8 +1,18 @@
 [user]
     name = Ryoga-exe
     email = git@ryoga.dev
+[core]
+    quotepath = false
+    ignorecase = false
+    hooksPath = ~/.config/git/hooks
+    autocrlf = input
+    safecrlf = true
+    preloadIndex = true
+    pager = delta
 [color]
     ui = true
+    diff = auto
+    status = auto
 [alias]
     sync = !git switch $(git remote show origin | grep 'HEAD branch' | awk '{print $NF}') && git pull origin $(git remote show origin | grep 'HEAD branch' | awk '{print $NF}') && git fetch --prune && git branch -d $(git branch --merged | grep -v '*')
     tags = !git tag --sort=-creatordate | head -n 10
@@ -31,12 +41,6 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
-[core]
-    quotepath = false
-    ignorecase = false
-    hooksPath = ~/.config/git/hooks
-    autocrlf = input
-    pager = delta
 [interactive]
     diffFilter = delta --color-only
 [delta]
