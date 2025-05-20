@@ -56,11 +56,8 @@ if (Test-Path -Path "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Paren
 # Alias
 . "$PSScriptRoot\alias.ps1"
 
-# ZLocation
-Import-Module -Name ZLocation -ErrorAction SilentlyContinue
-if (!$?) {
-    Write-Warning 'ZLocation is not installed, try "Install-Module -Name ZLocation -Repository PSGallery -Scope CurrentUser"'
-}
+# Zoxide
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
 # Utilities
 . "$PSScriptRoot\utilities.ps1"
