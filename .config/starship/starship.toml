@@ -69,8 +69,8 @@ untracked = "?$count"
 stashed = "$"
 modified = "!$count"
 staged = "+$count"
-renamed = "»"
-deleted = "✘"
+renamed = "»$count"
+deleted = "✘$count"
 ignore_submodules = false
 format = "([$all_status$ahead_behind$count ](bg:#17d7a0 fg:#011627))"
 
