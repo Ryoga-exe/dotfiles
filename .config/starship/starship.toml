@@ -1,34 +1,53 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+add_newline = true
+
 continuation_prompt = '▶▶ '
 
 format = """
-$shell\
+$os\
+$hostname\
 ($username)\
+[ ](fg:#ffffff bg:#0077c2)\
+[](fg:#0077c2 bg:#444444)\
+($sudo)\
 $directory\
-($git_branch$git_status[\ue0b0](fg:#17d7a0))\
+($git_branch$git_status[](fg:#17d7a0))\
 $cmd_duration\
 $line_break\
 $character\
 """
 
-[shell]
+[os]
 format = """
-[\u256d\u2500\ue0b6](fg:#0077c2)\
-[ $indicator ](fg:#ffffff bg:#0077c2)\
-[\ue0b0](fg:#0077c2 bg:#444444)\
+[╭─](fg:#0077c2)\
+[ $symbol ](fg:#ffffff bg:#0077c2)\
 """
 disabled = false
 
+[hostname]
+ssh_only = false
+ssh_symbol = "🌐"
+format = """
+[$hostname](fg:#ffffff bg:#0077c2)\
+"""
+
 [username]
 format = """
-\b\
-[\ue0b0](fg:#0077c2 bg:#ef5350)\
-[ \uf0e7 $user ](fg:#fffb38 bg:#ef5350)\
-[\ue0b0](fg:#ef5350 bg:#444444)\
+[@$user](fg:#ffffff bg:#0077c2)\
 """
 disabled = false
 show_always = false
+
+[sudo]
+symbol = ""
+disabled = false
+format = """
+\b\
+[\ue0b0](fg:#0077c2 bg:#ef5350)\
+[ $symbol ](fg:#fffb38 bg:#ef5350)\
+[\ue0b0](fg:#ef5350 bg:#444444)\
+"""
 
 [directory]
 format = "[ $path ](fg:#e4e4e4 bg:#444444)[\ue0b0](fg:#444444)"
@@ -91,11 +110,6 @@ $symbol \
 """
 success_symbol = "[\u276f](#e0f8ff)"
 error_symbol = "[\u276f](#ef5350)"
-
-[os]
-format = "on [($name $symbol)]($style)"
-style = "bg:blue"
-disabled = false
 
 [os.symbols]
 AIX = "➿ "
