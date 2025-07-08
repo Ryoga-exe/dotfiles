@@ -39,8 +39,17 @@ home_symbol = "~"
 use_os_path_sep = false
 
 [directory.substitutions]
-"~/workspace/repos/github.com" = "\uf09b "
-"~/workspace/repos/gitlab.com" = "\uf296 "
+"~/workspace/repos/github.com" = " " # nf-fa-github
+"~/workspace/repos/gitlab.com" = " " # nf-fa-gitlab
+"~/workspace/cp" = " "               # nf-fa-trophy
+"~/workspace/ctf" = "󰉀"               # nf-md-flag_variant
+"~/Desktop" = " "                    # nf-fa-desktop
+"~/Documents" = "󱧶 "                  # nf-md-folder_file
+"~/Downloads" = "󰉍 "                  # nf-md-folder_download
+"~/Pictures" = "󰉏 "                   # nf-md-folder_image
+"~/Music" = "󱍙 "                      # nf-md-folder_music
+"~/Public" = "󱧰 "                     # nf-md-folder_arrow_up
+"~/Videos" = "󱧺 "                     # nf-md-folder_play
 
 [git_branch]
 format = """
