@@ -6,9 +6,8 @@ continuation_prompt = '▶▶ '
 
 format = """
 $os\
-$hostname\
 ($username)\
-[ ](fg:#ffffff bg:#0077c2)\
+$hostname\
 [](fg:#0077c2 bg:#444444)\
 ($sudo)\
 $directory\
@@ -29,12 +28,12 @@ disabled = false
 ssh_only = false
 ssh_symbol = "🌐"
 format = """
-[$hostname](fg:#ffffff bg:#0077c2)\
+[$hostname $ssh_symbol](fg:#ffffff bg:#0077c2)\
 """
 
 [username]
 format = """
-[@$user](fg:#ffffff bg:#0077c2)\
+[$user@](fg:#ffffff bg:#0077c2)\
 """
 disabled = false
 show_always = false
