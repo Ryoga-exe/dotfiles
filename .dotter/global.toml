@@ -37,3 +37,7 @@ depends = ["starship"]
 
 [fd.files]
 ".config/fd" = "~/.config/fd"
+
+# Terminal
+[alacritty.files]
+".config/alacritty" = "~/.config/alacritty"

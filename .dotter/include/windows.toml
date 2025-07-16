@@ -4,3 +4,6 @@ depends = ["powershell", "nvim", "code", "git", "fd"]
 [powershell.files]
 ".profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
 ".config/powershell" = "~/.config/powershell"
+
+[alacritty.files]
+".config/alacritty" = "~/AppData/alacritty"
