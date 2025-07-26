@@ -1,0 +1,4 @@
+font-feature = -calt, -liga, -dlig
+
+background-opacity = 0.85
+background-blur = true
