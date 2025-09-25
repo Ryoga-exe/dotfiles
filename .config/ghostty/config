@@ -2,3 +2,11 @@ font-feature = -calt, -liga, -dlig
 
 background-opacity = 0.85
 background-blur = true
+
+quick-terminal-position = "center"
+quick-terminal-screen = "main"
+quick-terminal-animation-duration = 0
+
+keybind = "global:ctrl+enter=toggle_quick_terminal"
+
+macos-window-buttons = hidden
