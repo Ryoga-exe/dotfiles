@@ -23,6 +23,9 @@ inline = 'eval "$(zoxide init zsh)"'
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
 
+[plugins.mise]
+inline = 'eval "$(mise activate zsh)"'
+
 [plugins.local-defer]
 local = "~/.config/zsh/defer"
 use = ["*.zsh"]
