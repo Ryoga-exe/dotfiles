@@ -6,7 +6,7 @@
     ignorecase = false
     hooksPath = ~/.config/git/hooks
     autocrlf = input
-    safecrlf = true
+    safecrlf = false
     preloadIndex = true
     pager = delta
 [color]
