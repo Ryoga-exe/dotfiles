@@ -26,7 +26,7 @@ disabled = false
 
 [hostname]
 ssh_only = false
-ssh_symbol = "🌐"
+ssh_symbol = "🌐 "
 format = """
 [$hostname $ssh_symbol](fg:#ffffff bg:#0077c2)\
 """
