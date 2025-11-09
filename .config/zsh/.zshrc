@@ -36,9 +36,6 @@ function select-history() {
 zle -N select-history
 bindkey '^r' select-history
 
-# fnm
-eval "$(fnm env --use-on-cd)"
-
 # Sheldon
 sheldon_cache="$XDG_CACHE_HOME/sheldon.zsh"
 sheldon_toml="$HOME/.config/sheldon/plugins.toml"
@@ -49,5 +46,5 @@ fi
 source "$sheldon_cache"
 unset cache_dir sheldon_cache sheldon_toml
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+# # bun completions
+# [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
