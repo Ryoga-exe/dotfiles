@@ -1,7 +1,7 @@
 [helpers]
 
 [default]
-depends = ["zsh", "nvim", "code", "git", "fd"]
+depends = ["zsh", "nvim", "git", "fd"]
 
 # Shell
 [zsh]
@@ -27,9 +27,6 @@ depends = ["starship"]
 # Editor
 [nvim.files]
 ".config/nvim" = "~/.config/nvim"
-
-[code.files]
-".config/Code" = "~/.config/Code"
 
 # Utility
 [git.files]

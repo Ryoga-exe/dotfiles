@@ -1,5 +1,5 @@
 [default]
-depends = ["powershell", "nvim", "code", "git", "fd"]
+depends = ["powershell", "nvim", "git", "fd"]
 
 [powershell.files]
 ".profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
